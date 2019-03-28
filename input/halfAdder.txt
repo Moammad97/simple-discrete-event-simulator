@@ -1,0 +1,17 @@
+simtime     : 302;
+input       : a,b; 
+signal      : aNot,bNot;
+signal      : t0,t1;
+output      : sum;
+
+not         : not0, a, aNot, 2;
+not         : not1, b, bNot, 2;
+ 
+and         : and0, a, bNot, t0, 2;
+and         : and1, b, aNot, t1, 2;
+
+or          : or0, t0, t1, sum, 2;
+
+value       : a,0,0,1,10,0,12;
+
+value       : b,1,0,0,3,1,6;

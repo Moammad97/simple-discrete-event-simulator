@@ -1,0 +1,4 @@
+
+default : ..\class\Main.class
+    echo "hello world"
+    java -cp ../class Main not.txt

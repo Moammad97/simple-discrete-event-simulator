@@ -1,0 +1,41 @@
+simtime:    500;
+
+input:      a,b,ci;
+output:     sum,co;
+signal:     aNot,bNot,cNot,aNotbNot,aNotcNot,bNotcNot,ab;
+signal:     t0,t1,t2,t3;
+signal:     y0,y1;
+
+signal:     ac,bc;
+signal:     j0;
+
+
+not:        not0,a,aNot,0;
+not:        not1,b,bNot,0;
+not:        not2,ci,cNot,0;
+
+and:        and0,aNot,bNot,aNotbNot,0;
+and:        and1,aNotbNot,ci,t0,0;
+
+and:        and2,aNot,cNot,aNotcNot,0;
+and:        and3,aNotcNot,b,t1,0;
+
+and:        and4,bNot,cNot,bNotcNot,0;
+and:        and5,a,bNotcNot,t2,0;
+
+and:        and6,a,b,ab,0;
+and:        and7,ab,ci,t3,0;
+
+and:        and8,a,ci,ac,0;
+and:        and9,b,ci,bc,0;
+
+or:         or3,ac,bc,j0,0;
+or:         or4,j0,ab,co,0;
+
+or:         or0,t0,t1,y0,0;
+or:         or1,y0,t2,y1,0;
+or:         or2,y1,t3,sum,0;
+
+value:      ci,0,0,1,5,0,10,1,15,0,20,1,25,0,30,1,35,0,40;
+value:      a,0,0,1,10,0,20,1,30,0,40;
+value:      b,0,0,1,20,0,40;

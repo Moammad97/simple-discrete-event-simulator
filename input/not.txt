@@ -1,0 +1,6 @@
+simtime:    500;            
+ // Simulation Time
+input:      in0;
+output:     out0;
+not:        not0,in0,out0,0;
+value:      in0,0,0,1,5;
